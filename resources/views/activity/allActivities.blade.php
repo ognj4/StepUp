@@ -7,7 +7,7 @@
 @section('content')
     <div class="container">
         <div class="p-3">
-            <a href="" class="col-3 btn btn-success">Add activity</a>
+            <a href="{{ route('activity.create') }}" class="col-3 btn btn-success">Add activity</a>
         </div>
         <table class="table">
             <thead>
@@ -27,8 +27,7 @@
                     <td>{{$activity->name}}</td>
                     <td>{{$activity->description}}</td>
                     <td>
-                        {{ Carbon::parse($activity->date)->format('d.M') }} -
-                        {{ Carbon::parse($activity->date)->format('h:m') }}
+                        {{ Carbon::parse($activity->date)->format('d.M h:m') }}
                     </td>
                     <td>{{$activity->duration}} min</td>
 

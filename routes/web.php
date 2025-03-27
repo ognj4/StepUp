@@ -8,7 +8,11 @@ Route::get('/', function () {
 });
 
 
-Route::controller(ActivityController::class)->prefix('/activity')->name('activity.')->group(function (){
+Route::controller(ActivityController::class)->prefix('activity')->name('activity.')->group(function () {
     Route::get('/all','allActivities')->name('all');
+    Route::get('/create', 'create')->name('create');
+    Route::post('/send', 'sendActivity')->name('send');
     Route::get('/{activity}', 'permalink')->name('permalink');
 });
+
+
