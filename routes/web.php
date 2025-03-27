@@ -15,4 +15,5 @@ Route::controller(ActivityController::class)->prefix('activity')->name('activity
     Route::get('/{activity}', 'permalink')->name('permalink');
 });
 
+Route::view('/training','training/home')->name('training.home');
 

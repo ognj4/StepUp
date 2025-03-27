@@ -11,7 +11,7 @@
                     <a class="nav-link" aria-current="page" href="{{ route('activity.all') }}">Activity</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Training</a>
+                    <a class="nav-link" href="{{ route('training.home') }}">Training</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/">Goals</a>

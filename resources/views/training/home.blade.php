@@ -5,6 +5,7 @@
 
 @section('content')
     <div class="container">
-        <p>Training page</p>
+        <p>Training home page</p>
+
     </div>
 @endsection
