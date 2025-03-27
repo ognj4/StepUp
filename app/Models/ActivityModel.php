@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class ActivityModel extends Model
 {
     protected $table = 'activity';
-    protected $fillable = ['name','description','duration','date'];
+    protected $fillable = ['name', 'description', 'duration', 'date'];
 }
