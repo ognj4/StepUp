@@ -3,7 +3,7 @@
     Welcome
 @endsection
 
-@section('pageContent')
+@section('content')
     @include('components.log')
 
     <div class="container">
