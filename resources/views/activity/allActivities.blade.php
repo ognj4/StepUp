@@ -1,13 +1,13 @@
+@php use Carbon\Carbon; @endphp
 @extends('layout')
 @section('pageHeader')
     Activities
 @endsection
 
-@section('pageContent')
+@section('content')
     <div class="container">
-        <div class="container col-6 p-3">
-            <a href="" class="btn btn-success">Dodaj proizvod</a>
-            <a href="" class="btn btn-success">Dodaj proizvod</a>
+        <div class="p-3">
+            <a href="" class="col-3 btn btn-success">Add activity</a>
         </div>
         <table class="table">
             <thead>
@@ -15,27 +15,30 @@
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
                 <th scope="col">Description</th>
-                <th scope="col">Duration</th>
                 <th scope="col">Date</th>
+                <th scope="col">Duration</th>
                 <th>Action</th>
             </tr>
             </thead>
             <tbody>
-                @foreach($allActivities as $activity)
+            @foreach($allActivities as $activity)
                 <tr>
                     <td>{{$activity->id}}</td>
                     <td>{{$activity->name}}</td>
                     <td>{{$activity->description}}</td>
-                    <td>{{$activity->duration}} min</td>
-                    <td>{{$activity->date}}</td>
                     <td>
-{{--                        <a href="{{ route('products.delete',['product' => $product->id]) }}" class="btn btn-danger">Obrisi</a>--}}
-{{--                        <a href="{{ route('products.single', ['product' => $product->id]) }}" class="btn btn-primary">Edituj</a>--}}
-                        <a href="" class="btn btn-danger">Obrisi</a>
-                        <a href="" class="btn btn-primary">Edituj</a>
+                        {{ Carbon::parse($activity->date)->format('d.M') }} -
+                        {{ Carbon::parse($activity->date)->format('h:m') }}
+                    </td>
+                    <td>{{$activity->duration}} min</td>
+
+                    <td>
+                        <a href="{{ route('activity.permalink', ['activity' => $activity->id]) }}"
+                           class="btn btn-primary">View</a>
+
                     </td>
                 </tr>
-                @endforeach
+            @endforeach
             </tbody>
         </table>
     </div>

@@ -9,7 +9,7 @@
 </head>
 <body>
 @include('components.navigation')
-@yield('pageContent')
+@yield('content')
 @include('components.footer')
 </body>
 </html>

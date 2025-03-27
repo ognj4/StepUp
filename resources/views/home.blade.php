@@ -3,7 +3,7 @@
     Training
 @endsection
 
-@section('pageContent')
+@section('content')
     <div class="container">
         <p>Training page</p>
     </div>
