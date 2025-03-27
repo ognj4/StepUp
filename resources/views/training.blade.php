@@ -1,12 +1,10 @@
 @extends('layout')
 @section('pageHeader')
-    Welcome
+    Training
 @endsection
 
 @section('pageContent')
-    @include('components.log')
-
     <div class="container">
-        <p>Welcome page</p>
+        <p>Training page</p>
     </div>
 @endsection
