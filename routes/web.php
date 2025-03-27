@@ -10,4 +10,5 @@ Route::get('/', function () {
 
 Route::controller(ActivityController::class)->prefix('/activity')->name('activity.')->group(function (){
     Route::get('/all','allActivities')->name('all');
+    Route::get('/{activity}', 'permalink')->name('permalink');
 });

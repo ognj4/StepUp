@@ -9,7 +9,13 @@ class ActivityController extends Controller
     public function allActivities()
     {
         $allActivities = ActivityModel::all();
-        return view('allActivities', compact('allActivities'));
+        return view('activity.allActivities', compact('allActivities'));
     }
+
+    public function permalink(ActivityModel $activity)
+    {
+        return view('activity.permalink', compact('activity'));
+    }
+
 
 }
