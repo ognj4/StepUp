@@ -21,8 +21,9 @@
                 <p class="badge bg-primary fs-6">{{ $activity->duration }} min</p>
             </div>
 
-            <div class="d-flex justify-content-between mt-4">
+            <div class="d-flex justify-content-between mt-3">
                 <a href="{{ route('activity.all') }}" class="btn btn-secondary">Back</a>
+                <a href="{{ route('activity.delete',['activity' => $activity->id]) }}" class="btn btn-danger">Delete</a>
             </div>
         </div>
     </div>

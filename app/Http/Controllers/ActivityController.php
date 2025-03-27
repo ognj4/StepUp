@@ -20,6 +20,13 @@ class ActivityController extends Controller
     {
         return view('activity.create');
     }
+    public function delete($activity)
+    {
+        $singleActivity = ActivityModel::where(['id' => $activity])->first();
+
+        $singleActivity->delete();
+        return redirect()->route('activity.all');
+    }
 
     public function sendActivity(Request $request)
     {
