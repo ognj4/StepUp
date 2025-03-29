@@ -32,7 +32,7 @@
                         <input type="date" class="form-control" name="date">
                     </div>
                     <a href="{{ route('activity.all') }}" class="btn btn-secondary"><i class="fas fa-arrow-circle-left"></i> Back</a>
-                    <button type="submit" class="btn btn-success center"><i class="fa-solid fa-plus"></i> Add Activity</button>
+                    <button type="submit" class="btn btn-success center"><i class="fa-solid fa-plus"></i> Add</button>
                 </form>
             </div>
         </div>

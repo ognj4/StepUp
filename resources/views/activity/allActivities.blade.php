@@ -8,7 +8,7 @@
     <div class="container">
 
         <div class="container p-3 d-flex justify-content-between align-items-center">
-            <a href="{{ route('activity.create') }}" class="btn btn-success">Add activity</a>
+            <a href="{{ route('activity.create') }}" class="btn btn-success"><i class="fa-solid fa-plus"></i> Add activity</a>
 
             <div class="dropdown">
                 <a class="btn btn-secondary dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true">
