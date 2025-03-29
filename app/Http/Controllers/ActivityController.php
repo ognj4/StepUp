@@ -7,10 +7,28 @@ use Illuminate\Http\Request;
 
 class ActivityController extends Controller
 {
-    public function allActivities()
+    public function allActivities(Request $request)
     {
-        $allActivities = ActivityModel::all();
-        return view('activity.allActivities', compact('allActivities'));
+        $sort = $request->query();
+        if(empty($request->query())) {
+            $allActivities = ActivityModel::all();
+        } else {
+
+            $sort = $request->query('sort');
+
+            $sortOptions = [
+                'date_asc' => ['date', 'asc'],
+                'date_desc' => ['date', 'desc'],
+                'duration_asc' => ['duration', 'asc'],
+                'duration_desc' => ['duration', 'desc'],
+            ];
+
+            // find better solution for this logic
+            [$column, $direction] = $sortOptions[$sort] ?? $sortOptions['date_asc'];
+            $allActivities = ActivityModel::orderBy($column,$direction)->get();
+        }
+
+        return view('activity.allActivities', compact('allActivities', 'sort'));
     }
 
     public function permalink(ActivityModel $activity)

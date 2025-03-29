@@ -15,10 +15,10 @@
                     <i class="fa-solid fa-filter"></i> Sort
                 </a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Date <i class="fa-solid fa-arrow-up"></i></a>
-                    <a class="dropdown-item" href="#">Duration <i class="fa-solid fa-arrow-up"></i></a>
-                    <a class="dropdown-item" href="#">Date <i class="fa-solid fa-arrow-down"></i></a>
-                    <a class="dropdown-item" href="#">Duration <i class="fa-solid fa-arrow-down"></i></a>
+                    <a class="dropdown-item" href="{{ route('activity.all', ['sort' => 'date_asc']) }}">Date <i class="fa-solid fa-arrow-up"></i></a>
+                    <a class="dropdown-item" href="{{ route('activity.all', ['sort' => 'duration_asc']) }}">Duration <i class="fa-solid fa-arrow-up"></i></a>
+                    <a class="dropdown-item" href="{{ route('activity.all', ['sort' => 'date_desc']) }}">Date <i class="fa-solid fa-arrow-down"></i></a>
+                    <a class="dropdown-item" href="{{ route('activity.all', ['sort' => 'duration_desc']) }}">Duration <i class="fa-solid fa-arrow-down"></i></a>
                 </div>
             </div>
 
@@ -30,8 +30,16 @@
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
                 <th scope="col">Description</th>
-                <th scope="col">Date</th>
-                <th scope="col">Duration</th>
+                <th scope="col">
+                    Date
+                    @if($sort == 'date_asc') <i class="fa-solid fa-arrow-up"></i> @endif
+                    @if($sort == 'date_desc') <i class="fa-solid fa-arrow-down"></i> @endif
+                </th>
+                <th scope="col">
+                    Duration
+                    @if($sort == 'duration_asc') <i class="fa-solid fa-arrow-up"></i> @endif
+                    @if($sort == 'duration_desc') <i class="fa-solid fa-arrow-down"></i> @endif
+                </th>
                 <th>Action</th>
             </tr>
             </thead>
