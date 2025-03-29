@@ -6,9 +6,24 @@
 
 @section('content')
     <div class="container">
-        <div class="p-3">
-            <a href="{{ route('activity.create') }}" class="col-3 btn btn-success">Add activity</a>
+
+        <div class="container p-3 d-flex justify-content-between align-items-center">
+            <a href="{{ route('activity.create') }}" class="btn btn-success">Add activity</a>
+
+            <div class="dropdown">
+                <a class="btn btn-secondary dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true">
+                    <i class="fa-solid fa-filter"></i> Sort
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Date <i class="fa-solid fa-arrow-up"></i></a>
+                    <a class="dropdown-item" href="#">Duration <i class="fa-solid fa-arrow-up"></i></a>
+                    <a class="dropdown-item" href="#">Date <i class="fa-solid fa-arrow-down"></i></a>
+                    <a class="dropdown-item" href="#">Duration <i class="fa-solid fa-arrow-down"></i></a>
+                </div>
+            </div>
+
         </div>
+
         <table class="table">
             <thead>
             <tr>
