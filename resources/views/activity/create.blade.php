@@ -31,8 +31,8 @@
                         <label class="form-label">Date</label>
                         <input type="date" class="form-control" name="date">
                     </div>
-
-                    <button type="submit" class="btn btn-success w-100">Add Activity</button>
+                    <a href="{{ route('activity.all') }}" class="btn btn-secondary"><i class="fas fa-arrow-circle-left"></i> Back</a>
+                    <button type="submit" class="btn btn-success center"><i class="fa-solid fa-plus"></i> Add Activity</button>
                 </form>
             </div>
         </div>
