@@ -23,7 +23,6 @@ class ActivityController extends Controller
                 'duration_desc' => ['duration', 'desc'],
             ];
 
-            // find better solution for this logic
             [$column, $direction] = $sortOptions[$sort] ?? $sortOptions['date_asc'];
             $allActivities = ActivityModel::orderBy($column,$direction)->get();
         }
