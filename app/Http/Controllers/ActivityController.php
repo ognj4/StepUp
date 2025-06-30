@@ -65,4 +65,28 @@ class ActivityController extends Controller
     {
         return view('activity.create');
     }
+
+    public function edit(ActivityModel $activity)
+    {
+        return view('activity.edit', compact('activity'));
+    }
+
+    public function update(Request $request, ActivityModel $activity)
+    {
+        $request->validate([
+            'name' => 'required|string',
+            'description' => 'required|string',
+            'duration' => 'required|integer',
+            'date' => 'required|date',
+        ]);
+
+        $activity->update([
+            'name' => $request->get('name'),
+            'description' => $request->get('description'),
+            'duration' => $request->get('duration'),
+            'date' => $request->get('date'),
+        ]);
+
+        return redirect()->route('activity.all')->with('success', 'Activity updated successfully!');
+    }
 }

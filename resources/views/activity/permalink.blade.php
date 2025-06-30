@@ -23,7 +23,7 @@
 
             <div class="d-flex justify-content-between mt-3">
                 <a href="{{ route('activity.all') }}" class="btn btn-secondary"><i class="fas fa-arrow-circle-left"></i> Back</a>
-                <a class="btn btn-primary"><i class="fas fa-edit"></i> Edit</a>
+                <a href="{{ route('activity.edit', $activity->id) }}" class="btn btn-primary"><i class="fas fa-edit"></i> Edit</a>
                 <a href="{{ route('activity.delete',['activity' => $activity->id]) }}" class="btn btn-danger"><i class="fas fa-trash"></i> Delete</a>
             </div>
         </div>

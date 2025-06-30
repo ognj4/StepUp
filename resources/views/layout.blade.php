@@ -14,6 +14,22 @@
 <body>
 @include('components.navigation')
 @yield('content')
+@if(session('success'))
+    <div id="flash-alert" class="alert alert-success mt-4 mx-auto text-center shadow" style="max-width: 500px;">
+        {{ session('success') }}
+    </div>
+
+    <script>
+        setTimeout(() => {
+            const alertBox = document.getElementById('flash-alert');
+            if (alertBox) {
+                alertBox.style.transition = 'opacity 0.3s ease';
+                alertBox.style.opacity = '0';
+                setTimeout(() => alertBox.remove(), 500);
+            }
+        }, 1500);
+    </script>
+@endif
 @include('components.footer')
 </body>
 </html>

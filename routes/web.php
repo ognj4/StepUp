@@ -13,6 +13,9 @@ Route::controller(ActivityController::class)->prefix('activity')->name('activity
     Route::post('/send', 'sendActivity')->name('send');
     Route::get('/delete/{activity}', 'delete')->name('delete');
     Route::get('/{activity}', 'permalink')->name('permalink');
+    Route::get('/edit/{activity}', 'edit')->name('edit');
+    Route::put('/update/{activity}', 'update')->name('update');
+
 });
 
 Route::view('/training','training/home')->name('training.home');
