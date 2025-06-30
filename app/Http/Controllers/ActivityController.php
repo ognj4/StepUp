@@ -43,6 +43,11 @@ class ActivityController extends Controller
         return redirect()->route('activity.all');
     }
 
+    public function create()
+    {
+        return view('activity.create');
+    }
+
     public function sendActivity(Request $request)
     {
         $request->validate([
@@ -59,11 +64,6 @@ class ActivityController extends Controller
             'date' => $request->get('date'),
         ]);
         return redirect()->route('activity.all');
-    }
-
-    public function create()
-    {
-        return view('activity.create');
     }
 
     public function edit(ActivityModel $activity)
@@ -87,6 +87,6 @@ class ActivityController extends Controller
             'date' => $request->get('date'),
         ]);
 
-        return redirect()->route('activity.all')->with('success', 'Activity updated successfully!');
+        return redirect()->route('activity.all')->with('success', "Activity '$activity->name' updated successfully!");
     }
 }
